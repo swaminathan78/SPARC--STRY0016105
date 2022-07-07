@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>create_problem</action_name>
+        <active>true</active>
+        <client>true</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments>Creates a problem record</comments>
+        <condition>new gl_prb_ProblemFormUtils().canCreateProblem(current);</condition>
+        <form_action>true</form_action>
+        <form_button>false</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>true</form_context_menu>
+        <form_link>true</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <format_for_configurable_workspace>false</format_for_configurable_workspace>
+        <hint>Create the problem record</hint>
+        <isolate_script>false</isolate_script>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>Create Problem</name>
+        <onclick>makeProblemNotMandatory();</onclick>
+        <order>1130</order>
+        <script><![CDATA[function makeProblemNotMandatory() {
+    var res = confirm('Do you still want to create a Problem for this Incident?');
+    if (res) {
+        var myCI = g_form.getValue("cmdb_ci");
+        var ga = new GlideAjax('GetCIRecord');
+        ga.addParam('sysparm_name', 'CICount');
+        ga.addParam('sysparm_ci_name', myCI);
+        ga.getXML(HelloWorldParse);
+
+        function HelloWorldParse(response) {
+            var answer = response.responseXML.documentElement.getAttribute("answer");
+
+
+            if (answer == 'yes') {
+
+
+                var urlString = '<a class="web" target="_blank" href="' + "/problem_list.do?sysparm_query=active%3Dtrue%5Ecmdb_ci=" + myCI + '">' + "Please click here to view the list" + '</a>';
+
+                var userAns = confirm("There is already problem record available for the selected CI.Do you want to create problem?");
+
+                if (userAns == true) {
+                    count = true;
+
+                } else {
+                    return false;
+                }
+
+            }
+            gsftSubmit(null, g_form.getFormElement(), 'create_problem');
+        }
+    }
+    if (typeof window == 'undefined')
+        runBusRuleCode();
+
+    function runBusRuleCode() {
+        action.setRedirectURL(current);
+        new gl_prb_ProblemFormUtils().createProblem(current);
+        var server_URI = gs.getProperty('glide.servlet.uri');
+        var url = server_URI + '/problem_list.do?sysparm_query=active%3Dtrue%5Ecmdb_ci=' + current.cmdb_ci + '&sysparm_view=';
+
+        var message = '<a class="web" target="_blank" href="' + url + '">Please click here to view the problem record list for the selected CI</a>';
+        //var message = "<p>There is already problem record available for the selected CI." + link + "</p>";
+        gs.addInfoMessage(message);
+    }
+}]]></script>
+        <show_insert>false</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>sninawe</sys_created_by>
+        <sys_created_on>2017-10-12 07:37:45</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>c6c86ccd4fb90b40b43b495d0210c7d4</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>Create Problem</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Global" source="global">global</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Global GitHub POC">7870a629dba09590f9591f83059619ef</sys_scope>
+        <sys_update_name>sys_ui_action_c6c86ccd4fb90b40b43b495d0210c7d4</sys_update_name>
+        <sys_updated_by>sramalingam1</sys_updated_by>
+        <sys_updated_on>2022-07-07 16:25:41</sys_updated_on>
+        <table>incident</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+    <sys_claim action="INSERT_OR_UPDATE">
+        <claim_owner_scope display_value="Global GitHub POC">7870a629dba09590f9591f83059619ef</claim_owner_scope>
+        <claim_timestamp>181d9744fd10000001</claim_timestamp>
+        <metadata_update_name>sys_ui_action_c6c86ccd4fb90b40b43b495d0210c7d4</metadata_update_name>
+        <previous_claim_app_version>1.0.0</previous_claim_app_version>
+        <previous_claim_name>Global GitHub POC</previous_claim_name>
+        <previous_claim_scope>7870a629dba09590f9591f83059619ef</previous_claim_scope>
+        <sys_created_by>sramalingam1</sys_created_by>
+        <sys_created_on>2022-07-07 16:18:07</sys_created_on>
+        <sys_id>262522addb249590f9591f83059619a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>sramalingam1</sys_updated_by>
+        <sys_updated_on>2022-07-07 16:18:07</sys_updated_on>
+    </sys_claim>
+</record_update>
