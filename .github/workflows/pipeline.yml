@@ -4,7 +4,7 @@ on:
   pull_request:
   push:
     branches:
-      - Story1
+      - swaminathan78-patch-1
 
 jobs:
   build:
