@@ -19,7 +19,7 @@
 
 }]]></script_true>
         <set_values/>
-        <short_description>workflow validation</short_description>
+        <short_description>workflow validation 1</short_description>
         <sys_class_name>sys_ui_policy</sys_class_name>
         <sys_created_by>sramalingam1</sys_created_by>
         <sys_created_on>2022-07-08 12:45:18</sys_created_on>
@@ -27,8 +27,8 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>11ddfeb98728d5507c147597cebb355a</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>workflow validation</sys_name>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>workflow validation 1</sys_name>
         <sys_overrides/>
         <sys_package display_value="Global GitHub POC" source="7870a629dba09590f9591f83059619ef">7870a629dba09590f9591f83059619ef</sys_package>
         <sys_policy/>
@@ -36,7 +36,7 @@
         <sys_scope display_value="Global GitHub POC">7870a629dba09590f9591f83059619ef</sys_scope>
         <sys_update_name>sys_ui_policy_11ddfeb98728d5507c147597cebb355a</sys_update_name>
         <sys_updated_by>sramalingam1</sys_updated_by>
-        <sys_updated_on>2022-07-08 12:45:18</sys_updated_on>
+        <sys_updated_on>2022-07-08 13:04:11</sys_updated_on>
         <table>incident</table>
         <ui_type>0</ui_type>
         <view/>
