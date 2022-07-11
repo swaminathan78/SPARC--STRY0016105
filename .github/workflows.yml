@@ -61,7 +61,7 @@ jobs:
         id: install_app_prod
         uses: ServiceNow/sncicd-install-app@2.0.0
         with:
-          version: ${{ needs.test.outputs.publishversion }}
+          version: ${{ needs.build.outputs.publishversion }}
           # Only applicable if Application Customization is active. 
           # Version of the base application on which to apply the customizations
 #          baseAppVersion: '1.2.3'
