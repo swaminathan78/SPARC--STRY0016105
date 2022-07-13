@@ -4,7 +4,7 @@ on:
   pull_request:
   push:
     branches:
-      - master
+      - Story1
 
 jobs:
   build:
@@ -54,7 +54,7 @@ jobs:
     # the first two jobs run on CI, then all three jobs run on CD. 
     name: Deploy to Prod
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/Story1' }}
     steps:
     
       - name: ServiceNow CI/CD Install App
@@ -74,4 +74,3 @@ jobs:
           nowPassword: ${{ secrets.NOWPASSWORD }}
           nowInstallInstance: ${{ secrets.NOWINSTALLINSTANCE }}
           appSysID: ${{ secrets.APPSYSID }}
-
