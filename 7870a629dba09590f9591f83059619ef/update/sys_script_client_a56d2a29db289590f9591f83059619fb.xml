@@ -3,7 +3,7 @@
         <active>true</active>
         <applies_extended>true</applies_extended>
         <condition/>
-        <description>testing</description>
+
         <field/>
         <global>true</global>
         <isolate_script>true</isolate_script>
