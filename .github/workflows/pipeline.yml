@@ -122,8 +122,6 @@ jobs:
         with:
           version: ${{ needs.build.outputs.publishversion }}
           
-          run: echo "${{ needs.build.outputs.publishversion }}"
-          
           # Only applicable if Application Customization is active. 
           # Version of the base application on which to apply the customizations
 #          baseAppVersion: '1.2.3'
