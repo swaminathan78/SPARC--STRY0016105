@@ -110,7 +110,7 @@ jobs:
     # trigger if the feature branch has been merged to master after a successfully 
     # completed pull request, hence the conditional for push to master. In other words,
     # the first two jobs run on CI, then all three jobs run on CD. 
- #   needs: test
+    needs: build
     name: Deploy to Prod
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
