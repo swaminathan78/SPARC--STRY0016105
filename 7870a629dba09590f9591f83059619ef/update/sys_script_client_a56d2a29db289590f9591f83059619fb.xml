@@ -3,7 +3,7 @@
         <active>true</active>
         <applies_extended>true</applies_extended>
         <condition/>
-        <description>testing</description>
+        <description>testing 1</description>
         <field/>
         <global>true</global>
         <isolate_script>true</isolate_script>
@@ -21,7 +21,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a56d2a29db289590f9591f83059619fb</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Alert Message on CI Form</sys_name>
         <sys_overrides/>
         <sys_package display_value="Global GitHub POC" source="7870a629dba09590f9591f83059619ef">7870a629dba09590f9591f83059619ef</sys_package>
@@ -30,7 +30,7 @@
         <sys_scope display_value="Global GitHub POC">7870a629dba09590f9591f83059619ef</sys_scope>
         <sys_update_name>sys_script_client_a56d2a29db289590f9591f83059619fb</sys_update_name>
         <sys_updated_by>sramalingam1</sys_updated_by>
-        <sys_updated_on>2022-07-13 11:38:01</sys_updated_on>
+        <sys_updated_on>2022-07-13 12:14:11</sys_updated_on>
         <table>cmdb_ci</table>
         <type>onLoad</type>
         <ui_type>0</ui_type>
